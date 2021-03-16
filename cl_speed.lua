@@ -224,7 +224,9 @@ speedlimitValues = {["Joshua Rd"]=medSpeedLimit,
 					["Lolita Ave"]=medSpeedLimit, 
 					["Meringue Ln"]=lowSpeedLimit, 
 					["Strangeways Dr"]=lowSpeedLimit,
-					["York St"]=lowSpeedLimit}
+					["York St"]=lowSpeedLimit,
+					["Tangerine St"]=lowSpeedLimit,
+					}
 
 function getSpeed()
     return speedlimit
