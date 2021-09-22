@@ -248,7 +248,7 @@ Citizen.CreateThread(function()
         local streethash = GetStreetNameAtCoord(playerloc.x, playerloc.y, playerloc.z)
         street = GetStreetNameFromHashKey(streethash)
         if IsPedInAnyVehicle(GetPlayerPed(-1)) then
-			if IsPauseMenuActive() then
+			if IsPauseMenuActive() or IsHudHidden() then
 				closeGui()
 			else
 				currentSpeed = GetEntitySpeed(GetPlayerPed(-1)) * 2.236936
