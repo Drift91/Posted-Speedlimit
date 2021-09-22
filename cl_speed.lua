@@ -1,8 +1,8 @@
 playerLoaded = 0
 speedlimit = 420
-lowSpeedLimit = 50
-medSpeedLimit = 70
-highSpeedLimit = 90
+lowSpeedLimit = 35
+medSpeedLimit = 50
+highSpeedLimit = 65
 currentSpeed = 0
 limitFlash = true
 pause = false
