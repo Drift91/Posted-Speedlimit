@@ -18,9 +18,9 @@ files({
     'html/app.js',
     'html/style.css',
 	'**/*.png',
-	'html/img/speed50.png',
+	'html/img/speed30.png',
+	'html/img/speed40.png',
 	'html/img/speed70.png',
-	'html/img/speed90.png',
 })
 
 export "getSpeed"
