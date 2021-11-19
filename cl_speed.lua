@@ -228,6 +228,7 @@ speedlimitValues = {["Joshua Rd"]=medSpeedLimit,
 					["Tangerine St"]=lowSpeedLimit,
 					["Fantastic Pl"]=lowSpeedLimit,
 					["Steele Way"]=lowSpeedLimit,
+					["Runway1"]=lowSpeedLimit, --LSIA
 					}
 
 function getSpeed()
