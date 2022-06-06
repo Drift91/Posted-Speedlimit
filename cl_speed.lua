@@ -245,14 +245,15 @@ Citizen.CreateThread(function()
     end
     while playerLoaded do
         Citizen.Wait(500)
-        local playerloc = GetEntityCoords(GetPlayerPed(-1))
+		local playerped = GetPlayerPed(-1)
+        local playerloc = GetEntityCoords(playerped)
         local streethash = GetStreetNameAtCoord(playerloc.x, playerloc.y, playerloc.z)
         street = GetStreetNameFromHashKey(streethash)
-        if IsPedInAnyVehicle(GetPlayerPed(-1)) then
+        if IsPedInAnyVehicle(playerped) then
 			if IsPauseMenuActive() or IsHudHidden() then
 				closeGui()
 			else
-				currentSpeed = GetEntitySpeed(GetPlayerPed(-1)) * 2.236936
+				currentSpeed = GetEntitySpeed(playerped) * 2.236936
 				speedlimit = speedlimitValues[street]
 				SpeedGui()
 			end
