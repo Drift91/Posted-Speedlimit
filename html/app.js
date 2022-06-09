@@ -9,12 +9,19 @@ window.addEventListener("message", function (event) {
 		limitFlash = event.data.limitFlash
 
 
+		$('.ui').width(screen.height * 1.77778 * 0.04531)
+		$('.ui').height(screen.height * 0.12037)
+
+		var width = $('.ui').width()
+		var height = $('.ui').height()
+
+
 		if (type === null) {
 			$(".speed").hide();
 		} else {
 			if (type == lowSpeedLimit) {
 				$(".speed").fadeIn();
-				$('.speed').html('<img src="img/speed50.png" width="87" height="130">');
+				$('.speed').html(`<img src="img/speed50.png" width=${width} height=${height}>`);
 				if (currentSpeed > lowSpeedLimit && limitFlash == true) {
 					$(".speed").fadeOut();
 					$(".speed").fadeIn();
@@ -24,7 +31,7 @@ window.addEventListener("message", function (event) {
 				}
 			} else if (type == medSpeedLimit) {
 				$(".speed").fadeIn();
-				$('.speed').html('<img src="img/speed70.png" width="87" height="130">');
+				$('.speed').html(`<img src="img/speed70.png" width=${width} height=${height}>`);
 				if (currentSpeed > medSpeedLimit && limitFlash == true) {
 					$(".speed").fadeOut();
 					$(".speed").fadeIn();
@@ -34,7 +41,7 @@ window.addEventListener("message", function (event) {
 				}
 			} else if (type == highSpeedLimit) {
 				$(".speed").fadeIn();
-				$('.speed').html('<img src="img/speed90.png" width="87" height="130">');
+				$('.speed').html(`img src="img/speed90.png" width=${width} height=${height}>`);
 				if (currentSpeed > highSpeedLimit && limitFlash == true) {
 					$(".speed").fadeOut();
 					$(".speed").fadeIn();
