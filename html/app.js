@@ -1,5 +1,5 @@
 window.addEventListener("message", function (event) {
-	
+
 	if (event.data.action == "display") {
 		type = event.data.type
 		currentSpeed = event.data.currentSpeed
@@ -18,7 +18,7 @@ window.addEventListener("message", function (event) {
 				if (currentSpeed > lowSpeedLimit && limitFlash == true) {
 					$(".speed").fadeOut();
 					$(".speed").fadeIn();
-				}					
+				}
 				else {
 					$(".speed").clearQueue();
 				}
@@ -28,7 +28,7 @@ window.addEventListener("message", function (event) {
 				if (currentSpeed > medSpeedLimit && limitFlash == true) {
 					$(".speed").fadeOut();
 					$(".speed").fadeIn();
-				}					
+				}
 				else {
 					$(".speed").clearQueue();
 				}
@@ -38,14 +38,14 @@ window.addEventListener("message", function (event) {
 				if (currentSpeed > highSpeedLimit && limitFlash == true) {
 					$(".speed").fadeOut();
 					$(".speed").fadeIn();
-				}					
+				}
 				else {
 					$(".speed").clearQueue();
 				}
 			} else {
 				console.log("No speed limit created for this road!")
 			}
-		
+
 			$('.limit').html(type);
 			$(".speed").show();
 		}
