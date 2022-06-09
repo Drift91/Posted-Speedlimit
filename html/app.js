@@ -1,7 +1,7 @@
 window.addEventListener("message", function (event) {
 	
-    if (event.data.action == "display") {
-        type = event.data.type
+	if (event.data.action == "display") {
+		type = event.data.type
 		currentSpeed = event.data.currentSpeed
 		lowSpeedLimit = event.data.lowSpeedLimit
 		medSpeedLimit = event.data.medSpeedLimit
@@ -9,9 +9,9 @@ window.addEventListener("message", function (event) {
 		limitFlash = event.data.limitFlash
 
 
-        if (type === null) {
-            $(".speed").hide();
-        } else {
+		if (type === null) {
+			$(".speed").hide();
+		} else {
 			if (type == lowSpeedLimit) {
 				$(".speed").fadeIn();
 				$('.speed').html('<img src="img/speed50.png" width="87" height="130">');
@@ -46,12 +46,12 @@ window.addEventListener("message", function (event) {
 				console.log("No speed limit created for this road!")
 			}
 		
-            $('.limit').html(type);
-            $(".speed").show();
-        }
+			$('.limit').html(type);
+			$(".speed").show();
+		}
 
-        $(".ui").fadeIn();
-    } else if (event.data.action == "hide") {
-        $(".ui").fadeOut();
-    }
+		$(".ui").fadeIn();
+	} else if (event.data.action == "hide") {
+		$(".ui").fadeOut();
+	}
 });
