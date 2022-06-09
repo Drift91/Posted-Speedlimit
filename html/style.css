@@ -8,7 +8,7 @@
 ::selection { background: transparent; } ::-moz-selection { background: transparent; }
 
 .ui {
-  bottom: 12%;
+  top: 12%;
   right: 1%;
   width: 87px;
   position: absolute;
