@@ -41,7 +41,7 @@ window.addEventListener("message", function (event) {
 				}
 			} else if (type == highSpeedLimit) {
 				$(".speed").fadeIn();
-				$('.speed').html(`img src="img/speed90.png" width=${width} height=${height}>`);
+				$('.speed').html(`<img src="img/speed90.png" width=${width} height=${height}>`);
 				if (currentSpeed > highSpeedLimit && limitFlash == true) {
 					$(".speed").fadeOut();
 					$(".speed").fadeIn();
