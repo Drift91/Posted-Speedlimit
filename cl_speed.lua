@@ -260,6 +260,7 @@ Citizen.CreateThread(function()
 				
 				if speedlimit == nil then
 					print("No speed limit created for this road: " .. street)
+					TriggerServerEvent('speedlimit:nolimit', GetPlayerServerId(PlayerId()), street)
 				end
 			end
         else

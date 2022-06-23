@@ -25,3 +25,5 @@ files({
 
 export "getSpeed"
 export "getStreet"
+
+server_script 'sv_debug.lua'
