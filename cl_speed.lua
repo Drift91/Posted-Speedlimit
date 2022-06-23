@@ -245,7 +245,7 @@ Citizen.CreateThread(function()
     end
     while playerLoaded do
         Citizen.Wait(500)
-		local playerped = GetPlayerPed(-1)
+		local playerped = PlayerPedId()
         local playerloc = GetEntityCoords(playerped)
         local streethash = GetStreetNameAtCoord(playerloc.x, playerloc.y, playerloc.z)
         street = GetStreetNameFromHashKey(streethash)
