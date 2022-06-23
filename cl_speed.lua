@@ -245,7 +245,7 @@ Citizen.CreateThread(function()
     end
     while playerLoaded do
         Citizen.Wait(500)
-		local playerped = GetPlayerPed(-1)
+		local playerped = PlayerPedId()
         local playerloc = GetEntityCoords(playerped)
         local streethash = GetStreetNameAtCoord(playerloc.x, playerloc.y, playerloc.z)
         street = GetStreetNameFromHashKey(streethash)
@@ -257,6 +257,10 @@ Citizen.CreateThread(function()
 				currentSpeed = GetEntitySpeed(vehicle) * 2.236936
 				speedlimit = speedlimitValues[street]
 				SpeedGui()
+				
+				if speedlimit == nil then
+					print("No speed limit created for this road: " .. street)
+				end
 			end
         else
             speedlimit = 0
