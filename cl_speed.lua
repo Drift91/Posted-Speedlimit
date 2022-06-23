@@ -257,6 +257,10 @@ Citizen.CreateThread(function()
 				currentSpeed = GetEntitySpeed(vehicle) * 2.236936
 				speedlimit = speedlimitValues[street]
 				SpeedGui()
+				
+				if speedlimit == nil then
+					print("No speed limit created for this road: " .. street)
+				end
 			end
         else
             speedlimit = 0

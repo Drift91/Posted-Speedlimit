@@ -49,8 +49,6 @@ window.addEventListener("message", function (event) {
 				else {
 					$(".speed").clearQueue();
 				}
-			} else {
-				console.log("No speed limit created for this road!")
 			}
 
 			$('.limit').html(type);
