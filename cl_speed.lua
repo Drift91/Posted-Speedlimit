@@ -256,11 +256,15 @@ Citizen.CreateThread(function()
 			else
 				currentSpeed = GetEntitySpeed(vehicle) * 2.236936
 				speedlimit = speedlimitValues[street]
-				SpeedGui()
 				
 				if speedlimit == nil then
+					speedlimit = 0
+					closeGui()
+					
 					print("No speed limit created for this road: " .. street)
 					TriggerServerEvent('speedlimit:nolimit', GetPlayerServerId(PlayerId()), street, playerloc)
+				else
+					SpeedGui()
 				end
 			end
         else
