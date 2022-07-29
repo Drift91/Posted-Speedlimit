@@ -254,6 +254,10 @@ Citizen.CreateThread(function()
 			else
 				speedlimit = speedlimitValues[street]
 				SpeedGui()
+				
+				if speedlimit == nil then
+					print("No speed limit created for this road: " .. street)
+				end
 			end
 		else
 			speedlimit = 0
