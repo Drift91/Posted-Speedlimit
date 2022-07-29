@@ -9,8 +9,8 @@ window.addEventListener("message", function (event) {
             $(".speed").show();
         }
 
-        $(".ui").fadeIn();
+        $(".ui").show();
     } else if (event.data.action == "hide") {
-        $(".ui").fadeOut();
+        $(".ui").hide();
     }
 });
