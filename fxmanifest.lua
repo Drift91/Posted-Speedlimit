@@ -17,6 +17,7 @@ files({
     'html/index.html',
     'html/app.js',
     'html/style.css',
+	'html/fonts/ChaletComprime-CologneSeventy.otf',
 })
 
 export "getSpeed"
