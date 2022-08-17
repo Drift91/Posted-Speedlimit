@@ -1,13 +1,12 @@
 @font-face {
   font-family: ChaletComprimeCologne;
-  src: url( "fonts/chaletcomprime-cologneseventy.otf" );
+  src: url( "fonts/ChaletComprime-CologneSixty.ttf" );
 }
 
 * {
   padding: 0;
   margin: 0;
   font-family: 'ChaletComprimeCologne', sans-serif;
-  font-stretch: condensed;
   text-transform: none;
 }
 
@@ -20,23 +19,21 @@
   position: absolute;
   height: 35px;
   z-index: 1000;
-  overflow: hidden;
+  overflow: visible;
   display: none;
 }
 
 .speed {
   position: relative;
-  line-height:20pt;
-  height:26px;
-  font-size: 16pt;
-  font-weight:500;
-  color:rgba(114, 204, 114, 1);
-  text-shadow: -1px -1px 0 rgba(0,0,0, 1), 1px -1px 0 rgba(0,0,0, 1), -1px 1px 0 rgba(0,0,0, 1), 1px 1px 0 rgba(0,0,0, 1);
+  line-height: 20pt;
+  height: 26px;
+  font-size: 19pt;
+  color: rgba(114, 204, 114, 1);
+  text-shadow: -1px -1px 1px rgba(0,0,0, 1), 1px -1px 1px rgba(0,0,0, 1), -1px 1px 1px rgba(0,0,0, 1), 1px 1px 1px rgba(0,0,0, 1);
 }
 
 .limit {
-  font-size: 16pt;
-  font-weight:500;
-  color:rgba(255, 255, 255, 1);
-  text-shadow: -1px -1px 0 rgba(0,0,0, 1), 1px -1px 0 rgba(0,0,0, 1), -1px 1px 0 rgba(0,0,0, 1), 1px 1px 0 rgba(0,0,0, 1);
+  font-size: 19pt;
+  color: rgba(255, 255, 255, 1);
+  text-shadow: -1px -1px 1px rgba(0,0,0, 1), 1px -1px 1px rgba(0,0,0, 1), -1px 1px 1px rgba(0,0,0, 1), 1px 1px 1px rgba(0,0,0, 1);
 }
