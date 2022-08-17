@@ -16,9 +16,9 @@
 .ui {
   bottom: 0px;
   left: 22.25%;
-	width: 400px;
+  width: 400px;
   position: absolute;
-  height:35px;
+  height: 35px;
   z-index: 1000;
   overflow: hidden;
   display: none;
@@ -26,17 +26,17 @@
 
 .speed {
   position: relative;
-  line-height:20pt;
-  height:26px;
+  line-height: 20pt;
+  height: 26px;
   font-size: 16pt;
-  font-weight:500;
-  color:rgba(150, 84, 150, 1);
+  font-weight: 500;
+  color: rgba(150, 84, 150, 1);
   text-shadow: -1px -1px 0 rgba(0,0,0, 1), 1px -1px 0 rgba(0,0,0, 1), -1px 1px 0 rgba(0,0,0, 1), 1px 1px 0 rgba(0,0,0, 1);
 }
 
 .limit {
   font-size: 16pt;
-  font-weight:500;
-  color:rgba(255, 255, 255, 1);
+  font-weight: 500;
+  color: rgba(255, 255, 255, 1);
   text-shadow: -1px -1px 0 rgba(0,0,0, 1), 1px -1px 0 rgba(0,0,0, 1), -1px 1px 0 rgba(0,0,0, 1), 1px 1px 0 rgba(0,0,0, 1);
 }
