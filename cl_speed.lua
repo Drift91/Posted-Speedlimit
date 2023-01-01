@@ -254,7 +254,8 @@ Citizen.CreateThread(function()
         local streethash = GetStreetNameAtCoord(playerloc.x, playerloc.y, playerloc.z)
         street = GetStreetNameFromHashKey(streethash)
         if IsPedInAnyVehicle(playerped) then
-			if IsPauseMenuActive() or IsHudHidden() or IsNonRoadVehicle( GetVehicleClass(GetVehiclePedIsIn(playerped)) ) then
+			local vehicle = GetVehiclePedIsIn(playerped)
+			if IsPauseMenuActive() or IsHudHidden() or IsNonRoadVehicle(vehicle) then
 				closeGui()
 			else
 				currentSpeed = GetEntitySpeed(playerped) * 2.236936
@@ -298,9 +299,10 @@ end
 function IsNonRoadVehicle(vehicle)
 
 	local nonRoadVehicles = {21, 16, 15, 14}
+	local vehicleClass = GetVehicleClass(vehicle)
 	
     for _, v in ipairs(nonRoadVehicles) do
-        if v == vehicle then
+        if v == vehicleClass then
             return true
         end
     end
