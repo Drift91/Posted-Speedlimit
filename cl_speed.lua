@@ -244,8 +244,8 @@ end
 
 Citizen.CreateThread(function()
     while not playerLoaded do
-	Citizen.Wait(50)
-	if PlayerPedId() == -1 then playerLoaded = 1 end
+		Citizen.Wait(50)
+		if PlayerPedId() == -1 then playerLoaded = 1 end
     end
     while playerLoaded do
         Citizen.Wait(500)
