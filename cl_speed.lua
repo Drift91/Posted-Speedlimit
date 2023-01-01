@@ -228,6 +228,8 @@ speedlimitValues = {
 	["Fantastic Pl"]=lowSpeedLimit,
 	["Steele Way"]=lowSpeedLimit,
 	["Runway1"]=lowSpeedLimit, --LSIA
+	["Dorset Pl"]=lowSpeedLimit,
+	["Mt Haan Dr"]=lowSpeedLimit,
 }
 
 function getSpeed()
@@ -238,18 +240,19 @@ function getStreet()
 end
 
 Citizen.CreateThread(function()
-	while not playerLoaded do
-	Citizen.Wait(50)
-	if PlayerPedId() == -1 then playerLoaded = 1 end
-	end
-	while playerLoaded do
-		Citizen.Wait(500)
+    while not playerLoaded do
+		Citizen.Wait(50)
+		if PlayerPedId() == -1 then playerLoaded = 1 end
+    end
+    while playerLoaded do
+        Citizen.Wait(500)
 		local playerped = PlayerPedId()
-		local playerloc = GetEntityCoords(playerped)
-		local streethash = GetStreetNameAtCoord(playerloc.x, playerloc.y, playerloc.z)
-		street = GetStreetNameFromHashKey(streethash)
-		if IsPedInAnyVehicle(playerped) then
-			if IsPauseMenuActive() or IsHudHidden() or IsNonRoadVehicle(GetVehicleClass(GetVehiclePedIsIn(playerped))) then
+        local playerloc = GetEntityCoords(playerped)
+        local streethash = GetStreetNameAtCoord(playerloc.x, playerloc.y, playerloc.z)
+        street = GetStreetNameFromHashKey(streethash)
+        if IsPedInAnyVehicle(playerped) then
+			local vehicle = GetVehiclePedIsIn(playerped)
+			if IsPauseMenuActive() or IsHudHidden() or IsNonRoadVehicle(vehicle) then
 				closeGui()
 			else
 				speedlimit = speedlimitValues[street]
@@ -287,9 +290,10 @@ end
 function IsNonRoadVehicle(vehicle)
 
 	local nonRoadVehicles = {21, 16, 15, 14}
-
-    for _, v in ipairs(nonRoadVehicles) do
-        if v == vehicle then
+	local vehicleClass = GetVehicleClass(vehicle)
+	
+    for _, v in pairs(nonRoadVehicles) do
+        if v == vehicleClass then
             return true
         end
     end
