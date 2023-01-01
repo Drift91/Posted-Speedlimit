@@ -301,7 +301,7 @@ function IsNonRoadVehicle(vehicle)
 	local nonRoadVehicles = {21, 16, 15, 14}
 	local vehicleClass = GetVehicleClass(vehicle)
 	
-    for _, v in ipairs(nonRoadVehicles) do
+    for _, v in pairs(nonRoadVehicles) do
         if v == vehicleClass then
             return true
         end
