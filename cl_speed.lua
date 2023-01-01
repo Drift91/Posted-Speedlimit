@@ -240,12 +240,12 @@ function getStreet()
 end
 
 Citizen.CreateThread(function()
-	while not playerLoaded do
-	Citizen.Wait(50)
-	if PlayerPedId() == -1 then playerLoaded = 1 end
-	end
-	while playerLoaded do
-		Citizen.Wait(500)
+    while not playerLoaded do
+		Citizen.Wait(50)
+		if PlayerPedId() == -1 then playerLoaded = 1 end
+    end
+    while playerLoaded do
+        Citizen.Wait(500)
 		local playerped = PlayerPedId()
 		local playerloc = GetEntityCoords(playerped)
 		local streethash = GetStreetNameAtCoord(playerloc.x, playerloc.y, playerloc.z)
