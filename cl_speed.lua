@@ -247,11 +247,12 @@ Citizen.CreateThread(function()
     while playerLoaded do
         Citizen.Wait(500)
 		local playerped = PlayerPedId()
-		local playerloc = GetEntityCoords(playerped)
-		local streethash = GetStreetNameAtCoord(playerloc.x, playerloc.y, playerloc.z)
-		street = GetStreetNameFromHashKey(streethash)
-		if IsPedInAnyVehicle(playerped) then
-			if IsPauseMenuActive() or IsHudHidden() or IsNonRoadVehicle(GetVehicleClass(GetVehiclePedIsIn(playerped))) then
+        local playerloc = GetEntityCoords(playerped)
+        local streethash = GetStreetNameAtCoord(playerloc.x, playerloc.y, playerloc.z)
+        street = GetStreetNameFromHashKey(streethash)
+        if IsPedInAnyVehicle(playerped) then
+			local vehicle = GetVehiclePedIsIn(playerped)
+			if IsPauseMenuActive() or IsHudHidden() or IsNonRoadVehicle(vehicle) then
 				closeGui()
 			else
 				speedlimit = speedlimitValues[street]
@@ -289,9 +290,10 @@ end
 function IsNonRoadVehicle(vehicle)
 
 	local nonRoadVehicles = {21, 16, 15, 14}
-
+	local vehicleClass = GetVehicleClass(vehicle)
+	
     for _, v in ipairs(nonRoadVehicles) do
-        if v == vehicle then
+        if v == vehicleClass then
             return true
         end
     end
