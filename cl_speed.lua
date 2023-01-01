@@ -250,11 +250,11 @@ Citizen.CreateThread(function()
     while playerLoaded do
         Citizen.Wait(500)
 		local playerped = PlayerPedId()
-        local playerloc = GetEntityCoords(playerped)
-        local streethash = GetStreetNameAtCoord(playerloc.x, playerloc.y, playerloc.z)
+		local vehicle = GetVehiclePedIsIn(playerped)
+        local vehicleloc = GetEntityCoords(vehicle)
+        local streethash = GetStreetNameAtCoord(vehicle.x, vehicle.y, vehicle.z)
         street = GetStreetNameFromHashKey(streethash)
         if IsPedInAnyVehicle(playerped) then
-			vehicle = GetVehiclePedIsIn(playerped)
 			if IsPauseMenuActive() or IsHudHidden() or IsNonRoadVehicle(vehicle) then
 				closeGui()
 			else
