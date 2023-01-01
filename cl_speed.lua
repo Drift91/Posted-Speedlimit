@@ -231,6 +231,8 @@ speedlimitValues = {
 	["Fantastic Pl"]=lowSpeedLimit,
 	["Steele Way"]=lowSpeedLimit,
 	["Runway1"]=lowSpeedLimit, --LSIA
+	["Dorset Pl"]=lowSpeedLimit,
+	["Mt Haan Dr"]=lowSpeedLimit,
 }
 
 function getSpeed()
